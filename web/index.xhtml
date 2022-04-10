@@ -1,12 +1,75 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      >      
     <h:head>
-        <title>Facelet Title</title>
+        <title>Kitap Sitesi -  Güvenilir ve Hızlı Alışverişin adresi</title>
+        <meta charset='utf-8'/>
+        <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0' name='viewport'/>
+        <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="En iyi kitaplar burada" />
+        <meta name="keywords" content="kitap , kitap sitesi , kitap al , kitap alışveriş"/>
+        <!-- bootstrap -->
+        <h:outputStylesheet library="css" name="bootstrap.css"/>
+        <!-- fontawesome -->
+        <h:outputStylesheet library="css" name="all.css"/>
+        <h:outputScript library="js" name="all.js" />
+
     </h:head>
-    <h:body>
-        Hello from Facelets
+
+    <h:body>    
+        <h:panelGroup layout="block" styleClass="container-fluid">
+            <h:panelGroup layout="block" styleClass="row align-items-center border-bottom ">
+
+                <h:panelGroup layout="block" styleClass="col-md-3 text-center my-2">
+                    <h:graphicImage value = "/img/logoN.jpeg" width="250px"/>
+                    <!-- <h1>Kitap Sitesi</h1>-->
+                </h:panelGroup>
+                <h:panelGroup layout="block" styleClass="col-md-4 my-2">
+                    <h:panelGroup layout="block" styleClass="input-group rounded m-2">
+                        <h:inputText styleClass="form-control rounded" a:placeholder="Ara.."/>
+                        <h:panelGroup styleClass="input-group-text border-0" id="search-addon">
+                            <a href="ara.xhtml" class="btn btn-primary text-decoration-none"><i class="fa fa-search"></i></a>
+                        </h:panelGroup>
+                    </h:panelGroup>
+                </h:panelGroup>
+                <h:panelGroup layout="block" styleClass="col-md-5 text-center my-2">
+                    <a href="login.xhtml" class="btn btn-primary text-decoration-none rounded-pill"><i class="fa-solid fa-arrow-right-to-bracket mx-1"></i>Giriş Yap</a>
+                    <a href="register.xhtml" class="btn btn-primary text-decoration-none rounded-pill"><i class="fa-solid fa-user-plus mx-1"></i>Kayıt Ol</a>
+                    <a href="sepet.xhtml" class="btn btn-primary text-decoration-none position-relative"><i class="fa-solid fa-basket-shopping"></i><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">+1</span></a>
+                </h:panelGroup>
+            </h:panelGroup>
+
+        </h:panelGroup>
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <h:graphicImage value = "/img/slide3.png" styleClass="d-block w-100" />
+                </div>
+                <div class="carousel-item">
+                    <h:graphicImage value = "/img/slide2.jpeg" styleClass="d-block w-100" />
+                </div>
+                <div class="carousel-item">
+                    <h:graphicImage value = "/img/slide3.png" styleClass="d-block w-100" />
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
     </h:body>
 </html>
 

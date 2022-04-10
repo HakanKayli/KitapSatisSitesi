@@ -37,39 +37,17 @@
                     </h:panelGroup>
                 </h:panelGroup>
                 <h:panelGroup layout="block" styleClass="col-md-5 text-center my-2">
-                    <a href="login.xhtml" class="btn btn-primary text-decoration-none rounded-pill"><i class="fa-solid fa-arrow-right-to-bracket mx-1"></i>Giriş Yap</a>
-                    <a href="register.xhtml" class="btn btn-primary text-decoration-none rounded-pill"><i class="fa-solid fa-user-plus mx-1"></i>Kayıt Ol</a>
-                    <a href="sepet.xhtml" class="btn btn-primary text-decoration-none position-relative"><i class="fa-solid fa-basket-shopping"></i><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">+1</span></a>
+                    <h:link value="Admin" styleClass="btn btn-primary text-decoration-none rounded-pill" outcome="/adminpanel/admin.xhtml"/>
+                    <h:link value="Giriş Yap" styleClass="btn btn-primary text-decoration-none rounded-pill" outcome="login.xhtml"/>
+                    <h:link value="Sepet" styleClass="btn btn-primary text-decoration-none rounded-pill" outcome="/adminpanel/admin.xhtml"/>
+
                 </h:panelGroup>
             </h:panelGroup>
 
         </h:panelGroup>
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <h:graphicImage value = "/img/slide3.png" styleClass="d-block w-100" />
-                </div>
-                <div class="carousel-item">
-                    <h:graphicImage value = "/img/slide2.jpeg" styleClass="d-block w-100" />
-                </div>
-                <div class="carousel-item">
-                    <h:graphicImage value = "/img/slide3.png" styleClass="d-block w-100" />
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
+
+
+
     </h:body>
 </html>
 

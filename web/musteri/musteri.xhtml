@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+
+    </h:head>
+    <h:body>
+
+        <h:form>
+
+            <h:commandButton action="create" value="Müşteri Ekle" />
+
+            <hr/>
+
+            <h:dataTable value="#{musteriBean.list}" var="c">
+                <h:column>
+                    <f:facet name="header">ID</f:facet>
+                        #{c.musteri_id}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">AD</f:facet>
+                        #{c.ad}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">SOYAD</f:facet>
+                        #{c.soyad}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">EMAIL</f:facet>
+                        #{c.email}
+                </h:column>                
+                <h:column>
+
+                    <f:facet name="header">ŞİFRE</f:facet>
+                        #{c.sifre}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">ADMINISTRATION</f:facet>
+                    <h:commandButton action ="#{musteriBean.updateForm(c)}" value="update" />
+                    <h:commandButton action ="#{musteriBean.delete(c)}" value="delete" />
+                </h:column>
+
+
+
+            </h:dataTable>
+
+
+
+
+        </h:form>
+
+
+    </h:body>
+</html>
+

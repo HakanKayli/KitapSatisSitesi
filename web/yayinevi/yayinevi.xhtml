@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+
+        <h:form>
+
+            <h:commandButton action="create" value="Kategori Ekle" />
+
+            <hr/>
+
+            <h:dataTable value="#{kategoriBean.list}" var="c">
+                <h:column>
+                    <f:facet name="header">ID</f:facet>
+                    #{c.kategori_id}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">AD</f:facet>
+                    #{c.ad}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">CREATED</f:facet>
+                    #{c.created}
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">ADMINISTRATION</f:facet>
+                    <h:commandButton action ="#{kategoriBean.updateForm(c)}" value="update" />
+                     <h:commandButton action ="#{kategoriBean.delete(c)}" value="delete" />
+                </h:column>
+                
+
+
+            </h:dataTable>
+
+
+
+
+        </h:form>
+
+
+    </h:body>
+</html>
+

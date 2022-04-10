@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Admin</title>
+        
+         <!-- bootstrap -->
+        <h:outputStylesheet library="css" name="bootstrap.css"/>
+        <!-- fontawesome -->
+        <h:outputStylesheet library="css" name="all.css"/>
+        <h:outputScript library="js" name="all.js" />
+    </h:head>
+    <h:body>
+        <div>
+            ADMINISTRATOR
+        </div>
+        <hr></hr>
+        <h:form>
+            
+            <h:commandButton  value="Adres" action="/adres/adres" styleClass="btn btn-primary text-decoration-none rounded-pill" ></h:commandButton>
+            <h:commandButton value="Kategori" action="/kategori/kategori" styleClass="btn btn-primary text-decoration-none rounded-pill" ></h:commandButton>
+            <h:commandButton value="Kitap" action="/kitap/kitap" styleClass="btn btn-primary text-decoration-none rounded-pill" ></h:commandButton>
+            <h:commandButton value="Müşteri" action="/musteri/musteri" styleClass="btn btn-primary text-decoration-none rounded-pill"></h:commandButton>
+            <h:commandButton value="Yayinevi" action="/yayinevi/yayinevi" styleClass="btn btn-primary text-decoration-none rounded-pill" ></h:commandButton>
+            <h:commandButton value="Yazar" action="/yazar/yazar" styleClass="btn btn-primary text-decoration-none rounded-pill"></h:commandButton>
+
+
+
+
+        </h:form>
+
+
+    </h:body>
+</html>
+

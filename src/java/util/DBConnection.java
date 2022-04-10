@@ -16,7 +16,7 @@ public class DBConnection {
         Connection c = null;
         try {
             Class.forName("org.postgresql.Driver");
-            c = DriverManager.getConnection("jdbc:postgresql://localhost:5433/kitapDatabase", "postgres", "98753");
+            c = DriverManager.getConnection("jdbc:postgresql://localhost:5433/dvdrental", "postgres", "12345");
         } catch(Exception ex){
             System.out.println(ex.getMessage());
         }   

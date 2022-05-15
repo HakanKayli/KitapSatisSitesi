@@ -12,11 +12,11 @@ import java.sql.DriverManager;
  * @author hakan2
  */
 public class DBConnection {
-    public Connection connet(){
+    public Connection connect(){
         Connection c = null;
         try {
             Class.forName("org.postgresql.Driver");
-            c = DriverManager.getConnection("jdbc:postgresql://localhost:5433/kitapDatabase", "postgres", "98753");
+            c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/kitapDatabase", "postgres", "12345");
         } catch(Exception ex){
             System.out.println(ex.getMessage());
         }   

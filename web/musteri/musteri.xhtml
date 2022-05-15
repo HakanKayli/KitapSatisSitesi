@@ -1,62 +1,75 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-    <h:head>
-        <title>Facelet Title</title>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template ="/template/adminTemp.xhtml">
 
-    </h:head>
-    <h:body>
+    <ui:define name="content">
 
-        <h:form>
+        <div class="row" >                
+            <div class="col-md-8">
+                <h:dataTable styleClass="table table-striped table-hover" value="#{musteriBean.list}" var="c">
+                    <h:column>
+                        <f:facet name="header">ID</f:facet>
+                            #{c.musteri_id}
+                    </h:column>
 
-            <h:commandButton action="create" value="Müşteri Ekle" />
+                    <h:column>
+                        <f:facet name="header">AD</f:facet>
+                            #{c.ad}
+                    </h:column>
 
-            <hr/>
+                    <h:column>
+                        <f:facet name="header">SOYAD</f:facet>
+                            #{c.soyad}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">EMAIL</f:facet>
+                            #{c.email}
+                    </h:column>                
+                    <h:column>
+                        <f:facet name="header">ŞİFRE</f:facet>
+                            #{c.sifre}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">İŞLEM</f:facet> 
+                        <h:form>
+                            <h:commandButton action ="#{musteriBean.updateForm(c)}" value="update" />
+                            <h:commandButton action ="#{musteriBean.delete(c)}" value="delete" />
+                        </h:form>
+                    </h:column>
+                </h:dataTable>
+            </div>
+            <div class="col-md-4">
+                <h:form>
+                    <div class="form-group" >                            
+                        <label for="ad" >Ad</label>
+                        <h:inputText styleClass="form-control" value="#{musteriBean.entity.ad}" /> 
+                    </div>
+                    <div class="form-group" >                            
+                        <label for="soyad" >Soyad</label>
+                        <h:inputText styleClass="form-control" value="#{musteriBean.entity.soyad}" /> 
+                    </div>
+                    <div class="form-group" >                            
+                        <label for="mail" >Mail</label>
+                        <h:inputText styleClass="form-control" value="#{musteriBean.entity.email}" /> 
+                    </div>
+                    <div class="form-group" >                            
+                        <label for="pass" >Password</label>
+                        <h:inputText styleClass="form-control" value="#{musteriBean.entity.sifre}" />
+                    </div>
+                    <div class="form-group" >   
+                        <h:commandButton  rendered="#{musteriBean.entity.musteri_id != 0}" styleClass="btn btn-primary" action="#{musteriBean.update}" value="Update" />
+                        <h:commandButton  rendered="#{musteriBean.entity.musteri_id != 0}" styleClass="btn btn-primary" action="#{musteriBean.clearForm}" value="Clear Form" />
+                        <h:commandButton  rendered="#{musteriBean.entity.musteri_id == 0}" styleClass="btn btn-primary" action="#{musteriBean.create}" value="Create" />
+                    </div>                   
+                </h:form>             
+            </div>
 
-            <h:dataTable value="#{musteriBean.list}" var="c">
-                <h:column>
-                    <f:facet name="header">ID</f:facet>
-                        #{c.musteri_id}
-                </h:column>
+        </div>
 
-                <h:column>
-                    <f:facet name="header">AD</f:facet>
-                        #{c.ad}
-                </h:column>
+    </ui:define>
 
-                <h:column>
-                    <f:facet name="header">SOYAD</f:facet>
-                        #{c.soyad}
-                </h:column>
-
-                <h:column>
-                    <f:facet name="header">EMAIL</f:facet>
-                        #{c.email}
-                </h:column>                
-                <h:column>
-
-                    <f:facet name="header">ŞİFRE</f:facet>
-                        #{c.sifre}
-                </h:column>
-
-                <h:column>
-                    <f:facet name="header">ADMINISTRATION</f:facet>
-                    <h:commandButton action ="#{musteriBean.updateForm(c)}" value="update" />
-                    <h:commandButton action ="#{musteriBean.delete(c)}" value="delete" />
-                </h:column>
-
-
-
-            </h:dataTable>
-
-
-
-
-        </h:form>
-
-
-    </h:body>
-</html>
-
+</ui:composition>

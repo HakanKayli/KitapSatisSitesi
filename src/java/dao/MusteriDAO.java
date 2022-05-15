@@ -62,7 +62,7 @@ public class MusteriDAO {
         try {
             Statement st = this.getDb().createStatement();
 
-            String query2 = "select * from kategori";
+            String query2 = "select * from musteri";
             ResultSet rs = st.executeQuery(query2);
             while (rs.next()) {
                 musteriList.add(new Musteri(rs.getLong("musteri_id"), rs.getString("ad"), rs.getString("soyad"), rs.getString("email"), rs.getString("sifre")));
@@ -77,7 +77,7 @@ public class MusteriDAO {
     public Connection getDb() {
         if (this.db == null) {
             DBConnection dbc = new DBConnection();
-            this.db = dbc.connet();
+            this.db = dbc.connect();
         }
         return db;
     }

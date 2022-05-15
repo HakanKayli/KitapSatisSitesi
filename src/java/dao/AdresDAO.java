@@ -79,7 +79,7 @@ public class AdresDAO {
     public Connection getDb() {
         if (this.db == null) {
             DBConnection dbc = new DBConnection();
-            this.db = dbc.connet();
+            this.db = dbc.connect();
         }
         return db;
     }

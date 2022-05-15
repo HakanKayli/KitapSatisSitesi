@@ -15,49 +15,45 @@ import java.util.List;
  *
  * @author hakan2
  */
-
-@Named
+@Named(value = "adresBean")
 @SessionScoped
-public class AdresBean implements Serializable{
-    
+public class AdresBean implements Serializable {
+
     private AdresDAO dao;
     private Adres entity;
-    
-    
-    
-    public String create(){
+    private List<Adres> list;
+
+    public AdresBean() {
+
+    }
+
+    public String create() {
         this.getDao().createAdres(entity);
+        this.entity = new Adres();
         return "index";
-        
     }
-    
-    public List<Adres> getlist(){
-        return this.getDao().getAdresList();
-          
-    }
-    public String updateForm(Adres c){
+
+    public String updateForm(Adres c) {
         this.entity = c;
         return "update"; //xhtml update diye bir sayfa olacak 
     }
-    
-    public String update(){
-        this.getDao().updateAdres(entity);
-        return "index"; //xhtml index sayfası olacak
-        
-    }
-    
-    public void delete(Adres c){
-        this.getDao().deleteAdres(c);
-        
-    }
-    
 
-    public AdresBean() {
+    public String update() {
+        this.getDao().updateAdres(entity);
+        this.entity = new Adres();
+        return "index"; //xhtml index sayfası olacak
+
+    }
+
+    public void delete(Adres c) {
+        this.getDao().deleteAdres(c);
+
     }
 
     public AdresDAO getDao() {
-        if (this.dao == null)
+        if (this.dao == null) {
             this.dao = new AdresDAO();
+        }
         return dao;
     }
 
@@ -66,18 +62,19 @@ public class AdresBean implements Serializable{
     }
 
     public Adres getEntity() {
-        if (this.entity == null)
+        if (this.entity == null) {
             this.entity = new Adres();
+        }
         return entity;
     }
 
     public void setEntity(Adres entity) {
         this.entity = entity;
     }
-    
-    
-    
-    
-    
-    
+
+    public List<Adres> getlist() {
+        this.list = this.getDao().getAdresList();
+        return list;
+    }
+
 }
